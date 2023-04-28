@@ -1,7 +1,6 @@
-package com.gomzha.noticias.seguridad;
+package com.example.noticias_v2;
 
-
-//import com.egg.biblioteca.servicios.UsuarioServicio;
+//import com.example.noticias_v2.servicio.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -17,7 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SeguridadWeb extends WebSecurityConfigurerAdapter {
 
 //    @Autowired
-//    public UsuarioServicio usuarioServicio;
+//    public UsuarioService usuarioServicio;
 //
 //    @Autowired
 //    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
@@ -25,27 +24,30 @@ public class SeguridadWeb extends WebSecurityConfigurerAdapter {
 //                .passwordEncoder(new BCryptPasswordEncoder());
 //    }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .antMatchers("/admin/*").hasRole("ADMIN")
-                .antMatchers("/css/*", "/js/*", "/img/*", "/**")
-                .permitAll()
-                .and().formLogin()
-                .loginPage("/login")
-                .loginProcessingUrl("/logincheck")
-                .usernameParameter("email")
-                .passwordParameter("password")
-                .defaultSuccessUrl("/inicio")
-                .permitAll()
-                .and().logout()
-                .logoutUrl("/logout")
-                .logoutSuccessUrl("/login")
-                .permitAll()
-                .and().csrf()
-                .disable();
 
 
-    }
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http
+//                .authorizeRequests()
+//                // .antMatchers("/admin/*").hasRole("ADMIN")
+//                .antMatchers("/css/*", "/js/*", "/img/*", "/**")
+//                .permitAll();
+//    }
+//                .and().formLogin()
+//                .loginPage("/login")
+//                .loginProcessingUrl("/logincheck")
+//                .usernameParameter("email")
+//                .passwordParameter("password")
+//                .defaultSuccessUrl("/inicio")
+//                .permitAll()
+//                .and().logout()
+//                .logoutUrl("/logout")
+//                .logoutSuccessUrl("/login")
+//                .permitAll()
+//                .and().csrf()
+//                .disable();
+
+
+
 }

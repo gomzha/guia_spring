@@ -1,9 +1,12 @@
-package com.gomzha.noticias.entidad;
+package com.example.noticias_v2.entidad;
 
 
-import jakarta.persistence.*;
-import java.util.Date;
+import javax.persistence.*;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.jpa.repository.Temporal;
+
+import java.sql.Date;
 
 @Entity
 public class Noticia {
@@ -14,6 +17,7 @@ public class Noticia {
     private String titulo;
     private String cuerpo;
     private Boolean estado;
+    private Date fecha;
 
     public Noticia() {
     }
@@ -37,8 +41,7 @@ public class Noticia {
         this.fecha = fecha;
     }
 
-    @Temporal(TemporalType.DATE)
-    private Date fecha;
+
 
     public Integer getId() {
         return id;

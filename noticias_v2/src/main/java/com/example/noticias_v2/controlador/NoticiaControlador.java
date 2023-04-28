@@ -1,4 +1,4 @@
-package com.gomzha.noticias.controlador;
+package com.example.noticias_v2.controlador;
 
 
 import com.example.noticias_v2.entidad.Noticia;
