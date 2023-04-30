@@ -19,6 +19,18 @@ public class Noticia {
     private Boolean estado;
     private Date fecha;
 
+    @OneToOne
+    @JoinColumn(name = "periodista_creador_id")
+    private Periodista periodistaCreador;
+
+    public Periodista getPeriodistaCreador() {
+        return periodistaCreador;
+    }
+
+    public void setPeriodistaCreador(Periodista periodistaCreador) {
+        this.periodistaCreador = periodistaCreador;
+    }
+
     public Noticia() {
     }
 

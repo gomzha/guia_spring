@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,7 +31,7 @@ public class  UsuarioService implements UserDetailsService {
 
         Usuario usuario = new Usuario();
         usuario.setUsername(nombre);
-        usuario.setPassword(password);
+        usuario.setPassword(new BCryptPasswordEncoder().encode(password));
         usuario.setEmail(email);
         usuario.setRol(Rol.USER);
 
@@ -47,6 +48,7 @@ public class  UsuarioService implements UserDetailsService {
         if(usuario != null){
             List<GrantedAuthority> permisos = new ArrayList<>();
             GrantedAuthority p = new SimpleGrantedAuthority("ROLE:" + usuario.getRol().toString());
+            System.out.println("El rol q cumple es el: " + usuario.getRol().toString());
             permisos.add(p);
             return new User(usuario.getUsername(), usuario.getPassword(), permisos);
         }else {

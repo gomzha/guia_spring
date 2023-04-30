@@ -18,29 +18,29 @@
   </div>
 </nav>
 
-<h1><span class="badge badge-secondary"> Registro de Usuario</span></h1>
+<h1><span class="badge badge-secondary"> Login de Usuario</span></h1>
 
-<form th:action="@{/inicio/registroUsuario}" method="POST">
+<form th:action="@{/loginCheck}" method="POST">
   <div class="form-group">
     <label for="username"><strong>UserName</strong></label>
     <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp" placeholder="Ingrese el UserName">
 <!--    <small id="tituloHelp" class="form-text text-muted">Verifique el titulo antes de registrarlo.</small>-->
   </div>
-  <div class="form-group">
-    <label for="email"><strong>Email</strong></label>
-    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Ingrese el email">
-    <!--    <small id="tituloHelp" class="form-text text-muted">Verifique el titulo antes de registrarlo.</small>-->
-  </div>
+<!--  <div class="form-group">-->
+<!--    <label for="email"><strong>Email</strong></label>-->
+<!--    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Ingrese el email">-->
+<!--    &lt;!&ndash;    <small id="tituloHelp" class="form-text text-muted">Verifique el titulo antes de registrarlo.</small>&ndash;&gt;-->
+<!--  </div>-->
   <div class="form-group">
     <label for="password"><strong>Password</strong></label>
     <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp" placeholder="Ingrese el password">
     <!--    <small id="tituloHelp" class="form-text text-muted">Verifique el titulo antes de registrarlo.</small>-->
   </div>
-  <div class="form-group">
-    <label for="password2"><strong>Repetir Password</strong></label>
-    <input type="password" class="form-control" id="password2" name="password2" aria-describedby="password2Help" placeholder="Vuelva a colocar el password">
-    <!--    <small id="tituloHelp" class="form-text text-muted">Verifique el titulo antes de registrarlo.</small>-->
-  </div>
+<!--  <div class="form-group">-->
+<!--    <label for="password2"><strong>Repetir Password</strong></label>-->
+<!--    <input type="password" class="form-control" id="password2" name="password2" aria-describedby="password2Help" placeholder="Vuelva a colocar el password">-->
+<!--    &lt;!&ndash;    <small id="tituloHelp" class="form-text text-muted">Verifique el titulo antes de registrarlo.</small>&ndash;&gt;-->
+<!--  </div>-->
   <button type="submit" class="btn btn-light">Registrar</button>
 </form>
 

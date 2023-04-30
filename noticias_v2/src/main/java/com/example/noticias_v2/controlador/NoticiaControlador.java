@@ -38,7 +38,7 @@ private NoticiaServicio noticiaServicio;
       //      modelo.put("error", ex.getMessage());
       //      return "autor_form.html";
       //  }
-        return "redirect:../";
+        return "redirect:/entrada/home";
     }
 
     @GetMapping("/baja/{id}") //localhost:8080/noticia/baja
@@ -49,7 +49,7 @@ private NoticiaServicio noticiaServicio;
         List<Noticia> noticia = noticiaServicio.listarNoticias();
 
         modelo.addAttribute("noticias", noticia);
-        return "redirect:/";
+        return "redirect:/entrada/home";
     }
 
     @GetMapping("/ver/{id}")  //localhost:8080/noticia/ver
@@ -82,7 +82,7 @@ private NoticiaServicio noticiaServicio;
         //      modelo.put("error", ex.getMessage());
         //      return "autor_form.html";
         //  }
-        return "redirect:/";
+        return "redirect:/entrada/home";
     }
 
 }

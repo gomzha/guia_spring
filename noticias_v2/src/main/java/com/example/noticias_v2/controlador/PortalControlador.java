@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = {"/", "/home", "/index"}) //localhost:8080/
+@RequestMapping(value = {"/index", "/entrada"}) //localhost:8080/
+
 public class PortalControlador {
 
     @Autowired
@@ -23,8 +24,20 @@ public class PortalControlador {
     @Autowired
     UsuarioService usuarioService;
 
-    @RequestMapping(value = {"/", "/home", "/index"})
+    @RequestMapping(value = {"/entrada"}) //"/", "/login",
+    public String login(ModelMap model) {
+        String nombre = "GONZALO";
+        model.addAttribute("nombre", nombre);
+
+//        List<Noticia> noticia = noticiaServicio.listarNoticias();
+//
+//        model.addAttribute("noticias", noticia);
+        return "entrada.html";
+    }
+
+    @RequestMapping(value = {"/home", "/index"})
     public String home(ModelMap model) {
+        System.out.println("entra dps de loggearse");
         String nombre = "GONZALO";
         model.addAttribute("nombre", nombre);
 
@@ -40,22 +53,22 @@ public class PortalControlador {
     }
 
 
-
-    @GetMapping("/registrarUsuario")
-    public String registrarUsuario(){
-        return "registrarusuario.html";
-    }
-
-    @PostMapping("/registroUsuario")
-    public String registroUsuario(@RequestParam String username , @RequestParam String email, @RequestParam String password, @RequestParam String password2, ModelMap modelo){
-
-        usuarioService.registrarUsuario(username,email, password, password2);
-        return "index.html";
-    }
-
-    @GetMapping("/login")
-    public String login(){
-        return "login.html";
-    }
+//
+//    @GetMapping("/registrarUsuario")
+//    public String registrarUsuario(){
+//        return "registrarusuario.html";
+//    }
+//
+//    @PostMapping("/registroUsuario")
+//    public String registroUsuario(@RequestParam String username , @RequestParam String email, @RequestParam String password, @RequestParam String password2, ModelMap modelo){
+//
+//        usuarioService.registrarUsuario(username,email, password, password2);
+//        return "entrada.html";
+//    }
+//
+//    @GetMapping("/entrada/login")
+//    public String login(){
+//        return "login.html";
+//    }
 
 }
