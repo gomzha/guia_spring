@@ -4,6 +4,7 @@ package com.example.noticias_v2.controlador;
 import com.example.noticias_v2.entidad.Noticia;
 import com.example.noticias_v2.servicio.NoticiaServicio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
 @RequestMapping("/noticia") //localhost:8080/Noticia
 
 public class NoticiaControlador {

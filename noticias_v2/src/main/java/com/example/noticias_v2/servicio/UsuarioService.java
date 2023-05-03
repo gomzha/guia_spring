@@ -47,7 +47,7 @@ public class  UsuarioService implements UserDetailsService {
 
         if(usuario != null){
             List<GrantedAuthority> permisos = new ArrayList<>();
-            GrantedAuthority p = new SimpleGrantedAuthority("ROLE:" + usuario.getRol().toString());
+            GrantedAuthority p = new SimpleGrantedAuthority("ROLE_" + usuario.getRol().toString());
             System.out.println("El rol q cumple es el: " + usuario.getRol().toString());
             permisos.add(p);
             return new User(usuario.getUsername(), usuario.getPassword(), permisos);
