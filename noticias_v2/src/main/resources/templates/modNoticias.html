@@ -9,14 +9,16 @@
 </head>
 
 <body>
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">
-      <img src="/img/gatito.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-      Noticias
-    </a>
-  </div>
-</nav>
+<ul th:replace="/fragments/cabecera :: ul"></ul>
+
+<!--<nav class="navbar navbar-light bg-light">-->
+<!--  <div class="container-fluid">-->
+<!--    <a class="navbar-brand" href="/">-->
+<!--      <img src="/img/gatito.png" alt="" width="30" height="24" class="d-inline-block align-text-top">-->
+<!--      Noticias-->
+<!--    </a>-->
+<!--  </div>-->
+<!--</nav>-->
 <h1><span class="badge-secondary">Modificar Noticia</span></h1>
 
 <!--<h2>Hola<span th:text="${noticiasId}" class="badge badge-secondary"></span></h2>-->

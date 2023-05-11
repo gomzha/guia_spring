@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -43,9 +44,9 @@ public class InicioControlador {
     }
 
     @PostMapping("/registroUsuario")
-    public String registroUsuario(@RequestParam String username , @RequestParam String email, @RequestParam String password, @RequestParam String password2, ModelMap modelo){
+    public String registroUsuario(@RequestParam String username , @RequestParam String email, @RequestParam String password, @RequestParam String password2, MultipartFile archivo, ModelMap modelo){
         System.out.println("entra acá!");
-        usuarioService.registrarUsuario(username,email, password, password2);
+        usuarioService.registrarUsuario(username,email, password, password2, archivo);
         return "inicio.html";
     }
 
